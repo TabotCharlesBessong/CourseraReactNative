@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <View
       style={{
-        backgroundColor: "#F4CE14",
+        backgroundColor: "#EE9972",
         marginBottom: 10,
       }}
     >

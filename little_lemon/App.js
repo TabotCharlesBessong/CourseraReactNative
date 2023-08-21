@@ -1,26 +1,28 @@
 import * as React from "react";
-import { View } from "react-native";
+import { StyleSheet, View } from "react-native";
 
-import { Footer, Header } from "./component";
+import { Footer, Header, MenuItem } from "./component";
 import { Welcome } from "./screens";
 import { StatusBar } from "expo-status-bar";
 export default function App() {
   return (
     <>
-      <View
-        style={{
-          flex: 1,
-          backgroundColor: "#495E57",
-          // flex:0.5
-        }}
-      >
+      <View style={styles.container}>
         <Header />
         <Welcome />
+        {/* <MenuItem /> */}
       </View>
-      <View style={{ backgroundColor: "#495E57" }}>
+      <View style={{ backgroundColor: "#EE9972" }}>
         <Footer />
       </View>
       <StatusBar style="auto" />
     </>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "#EE9972",
+  },
+});
