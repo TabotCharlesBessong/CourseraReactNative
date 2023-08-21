@@ -9,8 +9,8 @@ export default function App() {
     <>
       <View style={styles.container}>
         <Header />
-        <Welcome />
-        {/* <MenuItem /> */}
+        {/* <Welcome /> */}
+        <MenuItem />
       </View>
       <View style={{ backgroundColor: "#EE9972" }}>
         <Footer />
