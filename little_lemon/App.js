@@ -1,7 +1,7 @@
 import * as React from "react";
 import { StyleSheet, View } from "react-native";
 
-import { Footer, Header, MenuItem, SectionA, SectionLists } from "./component";
+import { FeedbackForm, Footer, Header, MenuItem, SectionA, SectionLists } from "./component";
 import { Welcome } from "./screens";
 import { StatusBar } from "expo-status-bar";
 export default function App() {
@@ -12,7 +12,8 @@ export default function App() {
         {/* <Welcome /> */}
         {/* <MenuItem /> */}
         {/* <SectionLists /> */}
-        <SectionA />
+        {/* <SectionA /> */}
+        <FeedbackForm/>
       </View>
       <View style={{ backgroundColor: "#EE9972" }}>
         <Footer />
