@@ -1,6 +1,6 @@
 
-import { SectionList, StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import { Pressable, SectionList, StyleSheet, Text, View } from 'react-native'
+import React, { useState } from 'react'
 
 const SectionLists = () => {
   const menuItemsToDisplay = [
@@ -37,6 +37,8 @@ const SectionLists = () => {
     },
   ];
 
+  const [showMenu, setShowMenu] = useState(false)
+
   const Item = ({ name, price }) => (
     <View style={styles.innerContainer}>
       <Text style={styles.itemText}>{name}</Text>
@@ -59,14 +61,33 @@ const SectionLists = () => {
    );
   return (
     <View style={styles.container}>
-      <SectionList
-        keyExtractor={(item, index) => item + index}
-        sections={menuItemsToDisplay}
-        renderItem={renderItem}
-        renderSectionHeader={renderSectionHeader}
-        ListFooterComponent={Footer}
-        ItemSeparatorComponent={Separator}
-      ></SectionList>
+      {!showMenu && (
+        <Text style={styles.infoSection}>
+          Little Lemon is a charming neighborhood bistro that serves simple food
+          and classic cocktails in a lively but casual environment. View our
+          menu to explore our cuisine with daily specials!
+        </Text>
+      )}
+      <Pressable
+        style={styles.button}
+        onPress={() => {
+          setShowMenu(!showMenu);
+        }}
+      >
+        <Text style={styles.buttonText}>
+          {showMenu ? "Home" : "View Menu"}
+        </Text>
+      </Pressable>
+      {showMenu && (
+        <SectionList
+          keyExtractor={(item, index) => item + index}
+          sections={menuItemsToDisplay}
+          renderItem={renderItem}
+          renderSectionHeader={renderSectionHeader}
+          ListFooterComponent={Footer}
+          ItemSeparatorComponent={Separator}
+        ></SectionList>
+      )}
     </View>
   );
 }
@@ -102,5 +123,28 @@ const styles = StyleSheet.create({
     fontSize: 20,
     flexWrap: "wrap",
     textAlign: "center",
+  },
+  buttonText: {
+    color: "#333333",
+    textAlign: "center",
+    fontSize: 32,
+  },
+  infoSection: {
+    fontSize: 24,
+    padding: 20,
+    marginVertical: 8,
+    color: "#EDEFEE",
+    textAlign: "center",
+    backgroundColor: "#495E57",
+  },
+  button: {
+    fontSize: 22,
+    padding: 10,
+    marginVertical: 8,
+    margin: 40,
+    backgroundColor: "#EDEFEE",
+    borderColor: "#EDEFEE",
+    borderWidth: 2,
+    borderRadius: 12,
   },
 });

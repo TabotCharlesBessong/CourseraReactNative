@@ -11,10 +11,10 @@ export default function App() {
         <Header />
         {/* <Welcome /> */}
         {/* <MenuItem /> */}
-        {/* <SectionLists /> */}
+        <SectionLists />
         {/* <SectionA /> */}
         {/* <FeedbackForm/> */}
-        <Login />
+        {/* <Login /> */}
       </View>
       <View style={{ backgroundColor: "#EE9972" }}>
         <Footer />
