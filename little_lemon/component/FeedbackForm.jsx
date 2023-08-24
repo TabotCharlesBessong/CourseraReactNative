@@ -1,6 +1,12 @@
-
 import React, { useState } from "react";
-import { KeyboardAvoidingView, Platform, ScrollView, StyleSheet, Text, TextInput } from "react-native";
+import {
+  KeyboardAvoidingView,
+  Platform,
+  ScrollView,
+  StyleSheet,
+  Text,
+  TextInput,
+} from "react-native";
 
 const FeedbackForm = () => {
   // declare the variables
@@ -11,50 +17,50 @@ const FeedbackForm = () => {
 
   return (
     <KeyboardAvoidingView
-   style={styles.container}
-   behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
-
-    <ScrollView style={styles.container} keyboardDismissMode="on-drag" >
-      <Text style={styles.headingSection}>
-        How was your visit to Little Lemon?{" "}
-      </Text>
-      <Text style={styles.infoSection}>
-        Little Lemon is a charming neighborhood bistro that serves
-        simple food and classic cocktails in a lively but casual
-        environment. We would love to hear your experience with us!
-      </Text>
-      <TextInput
-        style={styles.input}
-        value={firstName}
-        onChangeText={onChangeFirstName}
-        placeholder="enter your first name"
-        autoCorrect={true}
-        autoCapitalize="sentences"
-      />
-      <TextInput
-        style={styles.input}
-        value={lastName}
-        onChangeText={onChangeLastName}
-        placeholder="enter your last name"
-      />
-      <TextInput
-        style={styles.input}
-        value={phoneNumber}
-        onChangeText={onChangePhoneNumber}
-        placeholder="enter your phone number"
-        maxLength={14}
-        keyboardType="phone-pad"
-      />
-      <TextInput
-        style={styles.messageInput}
-        value={message}
-        onChangeText={onChangeMessage}
-        placeholder="enter your message"
-        multiline
-        maxLength={250}
-      />
-    </ScrollView>
-   </KeyboardAvoidingView>
+      style={styles.container}
+      behavior={Platform.OS === "ios" ? "padding" : "height"}
+    >
+      <ScrollView style={styles.container} keyboardDismissMode="on-drag">
+        <Text style={styles.headingSection}>
+          How was your visit to Little Lemon?{" "}
+        </Text>
+        <Text style={styles.infoSection}>
+          Little Lemon is a charming neighborhood bistro that serves simple food
+          and classic cocktails in a lively but casual environment. We would
+          love to hear your experience with us!
+        </Text>
+        <TextInput
+          style={styles.input}
+          value={firstName}
+          onChangeText={onChangeFirstName}
+          placeholder="enter your first name"
+          autoCorrect={true}
+          autoCapitalize="sentences"
+        />
+        <TextInput
+          style={styles.input}
+          value={lastName}
+          onChangeText={onChangeLastName}
+          placeholder="enter your last name"
+        />
+        <TextInput
+          style={styles.input}
+          value={phoneNumber}
+          onChangeText={onChangePhoneNumber}
+          placeholder="enter your phone number"
+          maxLength={14}
+          keyboardType="phone-pad"
+        />
+        <TextInput
+          style={styles.messageInput}
+          value={message}
+          onChangeText={onChangeMessage}
+          placeholder="enter your message"
+          multiline
+          maxLength={250}
+        />
+      </ScrollView>
+    </KeyboardAvoidingView>
   );
 };
 
@@ -99,4 +105,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default FeedbackForm; 
+export default FeedbackForm;
