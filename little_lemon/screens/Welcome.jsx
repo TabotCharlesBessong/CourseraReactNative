@@ -1,38 +1,96 @@
-
-import { ScrollView, StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import {
+  Image,
+  ImageBackground,
+  ScrollView,
+  StyleSheet,
+  Text,
+  View,
+} from "react-native";
+import React from "react";
+import images from "../constant/images";
 
 const Welcome = () => {
   return (
-    <ScrollView contentContainerStyle={styles.container} showsVerticalScrollIndicator={true} indicatorStyle={"white"} >
-      <Text style={styles.text1} >Welcome to the little lemon</Text>
-      <Text style={styles.text2} >Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod amet, beatae error quos in maiores nesciunt maxime nostrum voluptatibus vero quae harum debitis adipisci sit, velit autem, fugit ipsa saepe.</Text>
+    <ScrollView style={styles.container}>
+      <Image
+        style={styles.logo}
+        accessible={true}
+        source={images.littlelemon}
+        accessibilityLabel={"Little Lemon Logo"}
+      />
+      <ImageBackground
+        style={{
+          flex: 1,
+          height: 420,
+          marginVertical: 16,
+          // padding: 8,
+          justifyContent: "center",
+        }}
+        source={images.littleLemonbg}
+        resizeMethod="contain"
+      >
+        <Text style={styles.title}>
+          Little Lemon, your local Mediterranean Bistro
+        </Text>
+      </ImageBackground>
+      <Image
+        style={styles.image}
+        accessible={true}
+        accessibilityLabel={"Little Lemon Logo"}
+        source={images.picture}
+        resizeMethod="repeat"
+      />
+      <Image
+        style={styles.image}
+        accessible={true}
+        accessibilityLabel={"Little Lemon Logo"}
+        source={images.picture1}
+      />
+      <Image
+        style={styles.image}
+        accessible={true}
+        accessibilityLabel={"Little Lemon Logo"}
+        source={images.picture2}
+      />
+      <Image
+        style={styles.image}
+        accessible={true}
+        accessibilityLabel={"Little Lemon Logo"}
+        source={images.picture3}
+      />
     </ScrollView>
-  )
-}
+  );
+};
 
-export default Welcome
+export default Welcome;
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor:"#333"
+    padding: 24,
+    marginTop: 25,
+    backgroundColor: "#fff",
   },
-  text1: {
-    color: "white",
-    marginVertical: 24,
-    fontSize: 24,
+
+  title: {
+    marginTop: 16,
+    paddingVertical: 10,
+    color: "#333333",
     textAlign: "center",
-    paddingHorizontal: 12,
+    fontSize: 20,
+    fontWeight: "bold",
   },
-  text2: {
-    color: "white",
-    fontSize: 24,
-    textAlign: "center",
-    paddingHorizontal: 12,
+
+  logo: {
+    height: 100,
+    width: 300,
+    resizeMode: "contain",
   },
-  scrollStyle:{
-    flex:1,
-    backgroundColor:'white'
-  }
+  image: {
+    width: 350,
+    height: 250,
+    borderRadius: 20,
+    marginVertical: 8,
+    flex:1
+  },
 });

@@ -99,6 +99,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 4,
     width: 280,
     // backgroundColor: "#EE9972",
+    left:28
   },
 });
 
