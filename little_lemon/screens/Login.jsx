@@ -1,10 +1,17 @@
 import { useState } from "react";
 import { ScrollView, Text, StyleSheet, KeyboardAvoidingView, Platform, TextInput, Pressable, View } from "react-native";
 
-const LoginScreen = () => {
+const LoginScreen = ({navigation}) => {
   const [email,onChangeEmail] = useState("")
   const [password,onChangePassword] = useState("")
   const [loggedIn, setLoggedIn] = useState(false)
+
+  const onLogin = () => {
+    setLoggedIn(true);
+    setTimeout(() => {
+      navigation.navigate('Menu')
+    },2000)
+  }
   return (
     <KeyboardAvoidingView
       style={[styles.container, { paddingTop: 24 }]}
@@ -33,9 +40,7 @@ const LoginScreen = () => {
           />
           <Pressable
             style={styles.button}
-            onPress={() => {
-              setLoggedIn(true);
-            }}
+            onPress={onLogin}
           >
             <Text style={styles.buttonText}>
               Log in

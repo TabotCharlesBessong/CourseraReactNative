@@ -5,10 +5,11 @@ import {
   StyleSheet,
   Image,
   useColorScheme,
+  Pressable,
 } from "react-native";
 import images from "../constant/images";
 
-export default function WelcomeScreen() {
+export default function WelcomeScreen({navigation}) {
   const colorScheme = useColorScheme();
 
   return (
@@ -50,6 +51,13 @@ export default function WelcomeScreen() {
         and classic cocktails in a lively but casual environment. We would love
         to hear your experience with us!
       </Text>
+
+      <Pressable
+        style={styles.button}
+        onPress={() => navigation.navigate('Login')}
+      >
+        <Text style={styles.buttonText}>Log in now</Text>
+      </Pressable>
     </ScrollView>
   );
 }
@@ -83,5 +91,24 @@ const styles = StyleSheet.create({
     width: 160,
     height: 100,
     borderRadius: 20,
+  },
+  buttonText: {
+    color: "#333333",
+    textAlign: "center",
+    fontSize: 32,
+  },
+  button: {
+    fontSize: 22,
+    padding: 10,
+    marginVertical: 8,
+    margin: 40,
+    backgroundColor: "#EDEFEE",
+    borderColor: "#EDEFEE",
+    borderWidth: 0,
+    borderRadius: 36,
+    paddingHorizontal: 4,
+    width: 280,
+    // backgroundColor: "#EE9972",
+    left: 28,
   },
 });
