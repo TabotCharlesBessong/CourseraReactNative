@@ -14,7 +14,11 @@ const Navigation = () => {
         initialRouteName="Welcome"
         screenOptions={{
           headerShown: "false",
-          headerStyle: { backgroundColor: "#FBDABB" },
+          headerStyle: { backgroundColor: "#333333" },
+          headerTintColor:'#fff',
+          headerTintStyle:{
+            fontWeight: 'bold',
+          }
         }}
       >
         <Stack.Screen
