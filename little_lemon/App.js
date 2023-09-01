@@ -25,8 +25,8 @@ export default function App() {
         {/* <SectionA /> */}
         {/* <FeedbackForm/> */}
         {/* <Login /> */}
-        {/* <Navigation/> */}
-        <DrawerNavigation/>
+        <Navigation/>
+        {/* <DrawerNavigation/> */}
         <View style={{ backgroundColor: "#EE9972" }}>
           <Footer />
         </View>
