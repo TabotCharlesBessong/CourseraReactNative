@@ -12,6 +12,7 @@ import {
 import { Login, Welcome } from "./screens";
 import { StatusBar } from "expo-status-bar";
 import Navigation from "./navigation/Navigation";
+import DrawerNavigation from "./navigation/DrawerNavigation";
 
 export default function App() {
   return (
@@ -24,7 +25,8 @@ export default function App() {
         {/* <SectionA /> */}
         {/* <FeedbackForm/> */}
         {/* <Login /> */}
-        <Navigation/>
+        {/* <Navigation/> */}
+        <DrawerNavigation/>
         <View style={{ backgroundColor: "#EE9972" }}>
           <Footer />
         </View>
