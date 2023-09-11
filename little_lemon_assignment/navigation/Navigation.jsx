@@ -12,7 +12,7 @@ const Navigation = () => {
       <Stack.Navigator
         initialRouteName="Welcome"
         screenOptions={{
-          headerShown: "false",
+          // headerShown: "false",
           headerStyle: { justifyContent: "center",alignItems: "center"},
           headerTintColor:'#000',
           headerTintStyle:{
